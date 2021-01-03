@@ -1,29 +1,29 @@
 # Node.js Express Image Utility Server
+## Project description
 The project provides image utility functions which currently include<br>
 - generate an image thumbnail<br>
 - convert an image to ASCII representative<br>
-
+- cartoonize an image<br>
 ## Project setup
 ```
-npm install
+To install: npm install
+To run: node server.js
 ```
 
-### Run
+
+## APIs
 ```
-node server.js
+POST /image/asciify[?width=80]  - asciify the uploaded image
+POST /image/thumbnail[?percentage=10] - thumbnailize the uploaded image 
+POST /image/cartoon - cartoonize the uploaded image
 ```
 
-### APIs
-```
-POST /asciify[?width=80]  - asciify the uploaded image
-POST /thumbnail[?percentage=10] - thumbnailize the uploaded image 
-```
-<br><br>
-
-## Configurations
-By default the server listens on port number 80, or whatever specified in environment variable IMGUTIL_PORT<br>
-By default the server allows image size up to 10 mega bytes, or the value specified in environment variable: IMGUTIL_MAX_IMG_SIZE<br>
-<br><br>
+## .env
+Configurations are reading from local .env file which contains environment variables<br>
+IMGUTIL_PORT specifies port number to be listened on, default is 80 if not specified<br>
+IMGUTIL_MAX_IMG_SIZE specifies maximum image size allowed, default is 10m is not specified<br>
+IMGUTIL_DEEPAI_API_KEY, you need to apply for a free api key from [Deepai](https://deepai.org), in order to use cartoon function<br>
+<br>
 
 
 ##  Upload images from Postman
@@ -39,6 +39,7 @@ Please note image name must be specified in the route<br>
 [1] [How to upload files in Node.js and Express](https://attacomsian.com/blog/uploading-files-nodejs-express)<br>
 [2] [Express File Upload with Multer in Node.js](https://attacomsian.com/blog/express-file-upload-multer)<br>
 [3] [Generate an image thumbnail](https://github.com/onildoaguiar/image-thumbnail)<br>
-[4] [Grab all the pixels in an image and return the result as an ndarray](https://www.npmjs.com/package/get-pixels)
-[5] [How to deploy a node.js application on aws ec2 server](https://ourcodeworld.com/articles/read/977/how-to-deploy-a-node-js-application-on-aws-ec2-server)<br>
-[6] [AWS npm install failed](https://stackoverflow.com/questions/54096891/npm-install-fails-on-ubuntu-18-04-with-error-failed-at-the-bcrypt3-0-3-insta)
+[4] [Grab all the pixels in an image and return the result as an ndarray](https://www.npmjs.com/package/get-pixels)<br>
+[5] [Deepai](https://deepai.org)<br>
+[6] [How to deploy a node.js application on aws ec2 server](https://ourcodeworld.com/articles/read/977/how-to-deploy-a-node-js-application-on-aws-ec2-server)<br>
+[7] [AWS npm install failed](https://stackoverflow.com/questions/54096891/npm-install-fails-on-ubuntu-18-04-with-error-failed-at-the-bcrypt3-0-3-insta)
