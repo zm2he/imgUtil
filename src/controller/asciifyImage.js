@@ -164,7 +164,7 @@ export function asciifyImage(req, res) {
       });
     })
     .then((image) => {
-      // save the generated thumbnail to a file (as inpit to getPixles)
+      // save the generated thumbnail to a file (will be the input to getPixles)
       fs.appendFileSync(thumbnailPath, Buffer.from(image));
     })
     .then(() => {
@@ -182,7 +182,7 @@ export function asciifyImage(req, res) {
         // delete the temporary saved thumbnail file
         fs.unlink(thumbnailPath, (error) => {
           if (error) {
-            console.log(`failed to delete ${thumbnailPath}`);
+            console.log(error);
           }
         });
 

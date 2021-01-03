@@ -24,6 +24,10 @@ function getBinaryImage(req) {
  * retrieve image by form-data type body
  */
 function getFormImage(req) {
+  if (!req.files) {
+    return Promise.reject("bad request, no image uploaded");
+  }
+
   let images = req.files.images || req.files.image;
   if (!Array.isArray(images)) {
     images = [images];
@@ -46,7 +50,7 @@ function getFormImage(req) {
  * @param {*} req
  */
 export async function getImageData(req) {
-  if (req.files) {
+  if(req.headers['content-type']?.startsWith('multipart/form-data;')) {
     return getFormImage(req);
   } else {
     return getBinaryImage(req);
