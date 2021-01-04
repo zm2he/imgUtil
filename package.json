@@ -25,6 +25,7 @@
     "express-fileupload": "^1.2.0",
     "get-pixels": "^3.3.2",
     "image-thumbnail": "^1.0.13",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "swagger-ui-express": "^4.1.6"
   }
 }
