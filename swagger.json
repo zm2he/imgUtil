@@ -1,29 +1,14 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "This is an image utility service server.",
     "version": "1.0.210103",
-    "title": "ImgUtil",
-    "termsOfService": "http://swagger.io/terms/",
-    "contact": {
-      "email": "bruce.he.62@gmail.com"
-    },
-    "license": {
-      "name": "Apache 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-    }
+    "title": "ImgUtil"
   },
   "host": "imgutil.io",
   "basePath": "/",
-  "tags": [
-    {
-      "name": "ImgUtil",
-      "description": "Everything about image"
-    }
-  ],
-  "schemes": ["https", "http"],
+  "schemes": [ "http"],
   "paths": {
-    "/image/thumbnail": {
+    "/api/image/thumbnail": {
       "post": {
         "tags": ["thumbnail"],
         "summary": "uploads an image and get back the image's thumbnail",
@@ -61,7 +46,7 @@
         }
       }
     },
-    "/image/asciify": {
+    "/api/image/asciify": {
       "post": {
         "tags": ["asciify"],
         "summary": "uploads an image and get back asciified image",
@@ -99,7 +84,7 @@
         }
       }
     },
-    "/image/cartoon": {
+    "/api/image/cartoon": {
       "post": {
         "tags": ["cartoon"],
         "summary": "uploads an image and get back a cartoonized image",
@@ -129,9 +114,5 @@
         }
       }
     }
-  },
-  "externalDocs": {
-    "description": "Find out more about Swagger",
-    "url": "http://swagger.io"
   }
 }

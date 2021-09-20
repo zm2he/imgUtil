@@ -48,7 +48,7 @@ export function setupRoutes(app) {
       "POST /image/cartoon",
     ])
   );
-  app.post("/image/asciify", asciifyImage);
-  app.post("/image/thumbnail", thumbnailImage);
-  app.post("/image/cartoon", cartoonImage);
+  app.post("/api/image/asciify", asciifyImage);
+  app.post("/api/image/thumbnail", thumbnailImage);
+  app.post("/api/image/cartoon", cartoonImage);
 }
