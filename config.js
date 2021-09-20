@@ -16,12 +16,13 @@ import dotenv from "dotenv";
 // reading envrionment variables from file .env
 dotenv.config();
 
-const port = process.env.IMGUTIL_PORT || 80;
+const port = process.env.IMGUTIL_PORT || 8081;
 const config = {
-  version: "1.0.210103",
+  version: "1.0.2100920",
 
   port,
-  baseUrl: `http://localhost:${port}`,
+  //baseUrl: `http://localhost:${port}`,
+  baseUrl: `http://35.173.93.67:${port}`,
 
   appFolder: ".",
 
